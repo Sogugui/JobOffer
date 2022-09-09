@@ -2,7 +2,15 @@
 const express = require('express');
 
 //IMPORTACIÓN DE RUTAS:
+const adsApiRouter = require("./routes/adsApiRoutes");
+const favoritesApiRouter = require("./routes/favoritesApiRoutes");
+const loginApiRouter = require("./routes/loginApiRoutes");
+const logoutApiRouter = require("./routes/logoutApiRoutes");
+const recpassApiRouter = require("./routes/recpassApiRoutes");
+const respassApiRouter = require("./routes/respassApiRoutes");
+const searchApiRouter = require("./routes/searchApiRoutes");
 const usersApiRouter = require("./routes/usersApiRoutes");
+
 
 //IMPORTACIÓN DE MIDDLEWARES:
 const manage404 = require('./middlewares/error404');
@@ -26,6 +34,13 @@ app.use(express.json());
 
 
 //INICIALIZACIÓN DEL ROUTER DE USUARIOS:
+app.use("/api/ads", adsApiRouter);
+app.use("/api/favorites", favoritesApiRouter);
+app.use("/api/login", loginApiRouter);
+app.use("/api/logout", logoutApiRouter);
+app.use("/api/recoverpassword", recpassApiRouter);
+app.use("/api/restorepassword", respassApiRouter);
+app.use("/api/search", searchApiRouter);
 app.use("/api/users", usersApiRouter);
 
 
