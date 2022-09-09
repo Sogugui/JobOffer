@@ -5,21 +5,21 @@
 
 
 
-//IMPORTACIÓN DEL MODELO USUARIO
-const userModel = require("../models/usersApiModel");
+//IMPORTACIÓN DEL MODELO LOGOUT
+const logoutModel = require("../models/logoutApiModel");
 
 
 
-// POST http://localhost:3000/api/users
+// POST http://localhost:3000/api/logout
 
-//CREAR USUARIO:
+//HACER LOGOUT:
 const logoutController = async (req,res) => {
     try {
     console.log(req.body);
     //Se guarda en la variable el objeto newUser leído en el body de Postman
     const newUser = req.body; // {id, email, password, full_name, role}
     //Respuesta
-    const response = await userModel.createUserModel(newUser);
+    const response = await logoutModel.doLogoutModel(newUser);
     res.status(201).json({"Guardado: ":response});
     
     } catch (error) {
@@ -41,7 +41,7 @@ const logoutController = async (req,res) => {
 
 
 
-//EXPORTACIÓN DE CONTROLADORES DE ENTRADAS:
+//EXPORTACIÓN DE CONTROLADORES DE LOGOUT:
 module.exports = {
     logoutController
     };

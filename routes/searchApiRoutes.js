@@ -8,14 +8,14 @@
 //IMPORTACIÓN DE EXPRESS:
 const express = require("express");
 
-//IMPORTACIÓN DE LOS CONTROLADORES DE USUARIOS:
+//IMPORTACIÓN DE LOS CONTROLADORES DE BÚSQUEDA:
 const searchApiController = require("../controllers/searchApiController");
 
-//DECLARACIÓN DEL ROUTER DE USUARIOS:
+//DECLARACIÓN DEL ROUTER DE BÚSQUEDA:
 const searchApiRouter = express.Router();
 
-//INICIALIZACIÓN DE RUTAS DE USUARIOS:
+//INICIALIZACIÓN DE RUTAS DE BÚSQUEDA:
 searchApiRouter.get("/", searchApiController.searchController);
 
-//EXPORTACIÓN DEL ROUTER DE USUARIOS:
+//EXPORTACIÓN DEL ROUTER DE BÚSQUEDA:
 module.exports = searchApiRouter;

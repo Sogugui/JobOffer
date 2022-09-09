@@ -11,21 +11,21 @@
 
 
 
-//IMPORTACIÓN DEL MODELO USUARIO
-const userModel = require("../models/usersApiModel");
+//IMPORTACIÓN DEL MODELO ANUNCIO
+const adsModel = require("../models/adsApiModel");
 
 
 
-// POST http://localhost:3000/api/users
+// POST http://localhost:3000/api/ads
 
-//CREAR USUARIO:
-const createAdvController = async (req,res) => {
+//CREAR ANUNCIO:
+const createAdsController = async (req,res) => {
     try {
     console.log(req.body);
     //Se guarda en la variable el objeto newUser leído en el body de Postman
     const newUser = req.body; // {id, email, password, full_name, role}
     //Respuesta
-    const response = await userModel.createUserModel(newUser);
+    const response = await adsModel.createAdsModel(newUser);
     res.status(201).json({"Guardado: ":response});
     
     } catch (error) {
@@ -47,15 +47,15 @@ const createAdvController = async (req,res) => {
 
 
 
-// PUT http://localhost:3000/api/users
+// PUT http://localhost:3000/api/ads
 
-//ACTUALIZAR NOMBRE USUARIO POR EMAIL:
-const updateAdvController = async (req, res) => {
+//ACTUALIZAR ANUNCIO POR EMAIL:
+const updateAdsController = async (req, res) => {
     
     try {
         console.log(req.body);
         const newUser = req.body; // {full_name, email}
-        const response = await userModel.updateUserModel(newUser);
+        const response = await adsModel.updateAdsModel(newUser);
         res.status(200).json({"Guardado: ":response});
 
     } catch (error) {
@@ -74,15 +74,15 @@ const updateAdvController = async (req, res) => {
 
 
 
-// DELETE http://localhost:3000/api/users
+// DELETE http://localhost:3000/api/ads
 
-//BORRAR USUARIO POR EMAIL:
-const deleteAdvController = async (req, res) => {
+//BORRAR ANUNCIO POR EMAIL:
+const deleteAdsController = async (req, res) => {
     
     try {
         console.log(req.body);
         const newUser = req.body; // {tilte}
-        const response = await userModel.deleteUserModel(newUser);
+        const response = await adsModel.deleteAdsModel(newUser);
         res.status(200).json({'Se ha borrado el usuario: ':response});
 
     } catch (error) {
@@ -99,9 +99,9 @@ const deleteAdvController = async (req, res) => {
 
 
 
-//EXPORTACIÓN DE CONTROLADORES DE ENTRADAS:
+//EXPORTACIÓN DE CONTROLADORES DE ANUNCIOS:
 module.exports = {
-    createAdvController,
-    updateAdvController,
-    deleteAdvController
+    createAdsController,
+    updateAdsController,
+    deleteAdsController
     };

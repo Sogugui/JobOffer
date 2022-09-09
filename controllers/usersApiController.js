@@ -12,7 +12,7 @@
 
 
 //IMPORTACIÓN DEL MODELO USUARIO
-const userModel = require("../models/usersApiModel");
+const usersModel = require("../models/usersApiModel");
 
 
 
@@ -25,7 +25,7 @@ const createUserController = async (req,res) => {
     //Se guarda en la variable el objeto newUser leído en el body de Postman
     const newUser = req.body; // {id, email, password, full_name, role}
     //Respuesta
-    const response = await userModel.createUserModel(newUser);
+    const response = await usersModel.createUserModel(newUser);
     res.status(201).json({"Guardado: ":response});
     
     } catch (error) {
@@ -55,7 +55,7 @@ const updateUserController = async (req, res) => {
     try {
         console.log(req.body);
         const newUser = req.body; // {full_name, email}
-        const response = await userModel.updateUserModel(newUser);
+        const response = await usersModel.updateUserModel(newUser);
         res.status(200).json({"Guardado: ":response});
 
     } catch (error) {
@@ -82,7 +82,7 @@ const deleteUserController = async (req, res) => {
     try {
         console.log(req.body);
         const newUser = req.body; // {tilte}
-        const response = await userModel.deleteUserModel(newUser);
+        const response = await usersModel.deleteUserModel(newUser);
         res.status(200).json({'Se ha borrado el usuario: ':response});
 
     } catch (error) {

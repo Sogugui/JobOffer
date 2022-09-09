@@ -8,14 +8,14 @@
 //IMPORTACIÓN DE EXPRESS:
 const express = require("express");
 
-//IMPORTACIÓN DE LOS CONTROLADORES DE USUARIOS:
+//IMPORTACIÓN DE LOS CONTROLADORES DE LOGOUT:
 const logoutApiController = require("../controllers/logoutApiController");
 
-//DECLARACIÓN DEL ROUTER DE USUARIOS:
+//DECLARACIÓN DEL ROUTER DE LOGOUT:
 const logoutApiRouter = express.Router();
 
-//INICIALIZACIÓN DE RUTAS DE USUARIOS:
+//INICIALIZACIÓN DE RUTAS DE LOGOUT:
 logoutApiRouter.post("/", logoutApiController.logoutController);
 
-//EXPORTACIÓN DEL ROUTER DE USUARIOS:
+//EXPORTACIÓN DEL ROUTER DE LOGOUT:
 module.exports = logoutApiRouter;

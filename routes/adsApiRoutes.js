@@ -14,16 +14,16 @@
 //IMPORTACIÓN DE EXPRESS:
 const express = require("express");
 
-//IMPORTACIÓN DE LOS CONTROLADORES DE USUARIOS:
+//IMPORTACIÓN DE LOS CONTROLADORES DE ANUNCIOS:
 const adsApiController = require("../controllers/adsApiController");
 
-//DECLARACIÓN DEL ROUTER DE USUARIOS:
+//DECLARACIÓN DEL ROUTER DE ANUNCIOS:
 const adsApiRouter = express.Router();
 
-//INICIALIZACIÓN DE RUTAS DE USUARIOS:
-adsApiRouter.post("/", adsApiController.createAdvController);
-adsApiRouter.put("/", adsApiController.updateAdvController);
-adsApiRouter.delete("/", adsApiController.deleteAdvController);
+//INICIALIZACIÓN DE RUTAS DE ANUNCIOS:
+adsApiRouter.post("/", adsApiController.createAdsController);
+adsApiRouter.put("/", adsApiController.updateAdsController);
+adsApiRouter.delete("/", adsApiController.deleteAdsController);
 
-//EXPORTACIÓN DEL ROUTER DE USUARIOS:
+//EXPORTACIÓN DEL ROUTER DE ANUNCIOS:
 module.exports = adsApiRouter;

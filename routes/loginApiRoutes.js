@@ -8,15 +8,14 @@
 //IMPORTACIÓN DE EXPRESS:
 const express = require("express");
 
-//IMPORTACIÓN DE LOS CONTROLADORES DE USUARIOS:
+//IMPORTACIÓN DE LOS CONTROLADORES DE LOGIN:
 const loginApiController = require("../controllers/loginApiController");
 
-//DECLARACIÓN DEL ROUTER DE USUARIOS:
+//DECLARACIÓN DEL ROUTER DE LOGIN:
 const loginApiRouter = express.Router();
 
-//INICIALIZACIÓN DE RUTAS DE USUARIOS:
+//INICIALIZACIÓN DE RUTAS DE LOGIN:
 loginApiRouter.post("/", loginApiController.loginController);
 
-
-//EXPORTACIÓN DEL ROUTER DE USUARIOS:
+//EXPORTACIÓN DEL ROUTER DE LOGIN:
 module.exports = loginApiRouter;

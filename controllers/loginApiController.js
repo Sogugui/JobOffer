@@ -5,21 +5,21 @@
 
 
 
-//IMPORTACIÓN DEL MODELO USUARIO
-const userModel = require("../models/usersApiModel");
+//IMPORTACIÓN DEL MODELO LOGIN
+const loginModel = require("../models/loginApiModel");
 
 
 
-// POST http://localhost:3000/api/users
+// POST http://localhost:3000/api/login
 
-//CREAR USUARIO:
+//HACER LOGIN:
 const loginController = async (req,res) => {
     try {
     console.log(req.body);
     //Se guarda en la variable el objeto newUser leído en el body de Postman
     const newUser = req.body; // {id, email, password, full_name, role}
     //Respuesta
-    const response = await userModel.createUserModel(newUser);
+    const response = await loginModel.doLoginModel(newUser);
     res.status(201).json({"Guardado: ":response});
     
     } catch (error) {
@@ -40,7 +40,7 @@ const loginController = async (req,res) => {
 
 
 
-//EXPORTACIÓN DE CONTROLADORES DE ENTRADAS:
+//EXPORTACIÓN DE CONTROLADORES DE LOGIN:
 module.exports = {
     loginController
     };

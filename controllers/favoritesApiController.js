@@ -8,21 +8,21 @@
 
 
 
-//IMPORTACIÓN DEL MODELO USUARIO
-const userModel = require("../models/usersApiModel");
+//IMPORTACIÓN DEL MODELO FAVORITO
+const favModel = require("../models/favoritesApiModel");
 
 
 
-// POST http://localhost:3000/api/users
+// POST http://localhost:3000/api/favorites
 
-//CREAR USUARIO:
+//CREAR FAVORITO:
 const setFavController = async (req,res) => {
     try {
     console.log(req.body);
     //Se guarda en la variable el objeto newUser leído en el body de Postman
     const newUser = req.body; // {id, email, password, full_name, role}
     //Respuesta
-    const response = await userModel.createUserModel(newUser);
+    const response = await favModel.setFavModel(newUser);
     res.status(201).json({"Guardado: ":response});
     
     } catch (error) {
@@ -45,15 +45,15 @@ const setFavController = async (req,res) => {
 
 
 
-// DELETE http://localhost:3000/api/users
+// DELETE http://localhost:3000/api/favorites
 
-//BORRAR USUARIO POR EMAIL:
+//BORRAR FAVORITO POR EMAIL:
 const unsetFavController = async (req, res) => {
     
     try {
         console.log(req.body);
         const newUser = req.body; // {tilte}
-        const response = await userModel.deleteUserModel(newUser);
+        const response = await favModel.unsetFavModel(newUser);
         res.status(200).json({'Se ha borrado el usuario: ':response});
 
     } catch (error) {
@@ -70,7 +70,7 @@ const unsetFavController = async (req, res) => {
 
 
 
-//EXPORTACIÓN DE CONTROLADORES DE ENTRADAS:
+//EXPORTACIÓN DE CONTROLADORES DE FAVORITOS:
 module.exports = {
     setFavController,
     unsetFavController

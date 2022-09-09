@@ -11,15 +11,15 @@
 //IMPORTACIÓN DE EXPRESS:
 const express = require("express");
 
-//IMPORTACIÓN DE LOS CONTROLADORES DE USUARIOS:
+//IMPORTACIÓN DE LOS CONTROLADORES DE FAVORITOS:
 const favoritesApiController = require("../controllers/favoritesApiController");
 
-//DECLARACIÓN DEL ROUTER DE USUARIOS:
+//DECLARACIÓN DEL ROUTER DE FAVORITOS:
 const favoritesApiRouter = express.Router();
 
-//INICIALIZACIÓN DE RUTAS DE USUARIOS:
+//INICIALIZACIÓN DE RUTAS DE FAVORITOS:
 favoritesApiRouter.post("/", favoritesApiController.setFavController);
 favoritesApiRouter.delete("/", favoritesApiController.unsetFavController);
 
-//EXPORTACIÓN DEL ROUTER DE USUARIOS:
+//EXPORTACIÓN DEL ROUTER DE FAVORITOS:
 module.exports = favoritesApiRouter;

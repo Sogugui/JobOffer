@@ -5,11 +5,11 @@
 
 
 
-//IMPORTACIÓN DEL MODELO ENTRADA
-const entryModel = require("../models/entriesApiModel");
+//IMPORTACIÓN DEL MODELO RESTAURAR PASS
+const respassModel = require("../models/respassApiModel");
 
 
-//LEER ENTRADAS (TODAS Y POR EMAIL)
+//LEER RESTAURAR PASS (TODAS Y POR EMAIL)
 const respassController = async (req, res) => {
     //Se declara la variable que tiene que devolver la función
     let entries;
@@ -18,12 +18,12 @@ const respassController = async (req, res) => {
         if (req.query.email) {
             //Búsqueda por email, invocando el método asíncrono getEntriesByEmail
             //(query. -> Para acceder a los parámetros de URL. ej: query.email)
-            entries = await entryModel.getEntriesByEmail(req.query.email);
+            entries = await respassModel.doRespassModel(req.query.email);
             //Devuelve [] con las entries encontradas
             res.status(200).json(entries);
         }else {
             //Si no pasas email, invocar método asíncrono getAllEntries
-            entries = await entryModel.getAllEntries();
+            entries = await respassModel.doRespassModel();
             res.status(200).json(entries);
         };
     } catch (error) {
@@ -36,7 +36,7 @@ const respassController = async (req, res) => {
 
 
 
-//EXPORTACIÓN DE CONTROLADORES DE ENTRADAS:
+//EXPORTACIÓN DE CONTROLADORES DE RESTAURAR PASS:
 module.exports = {
     respassController
     };
