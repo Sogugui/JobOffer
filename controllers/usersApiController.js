@@ -1,3 +1,16 @@
+///////////////ENDPOINTS API:
+
+//POST http://localhost:3000/api/users
+//Registrarse en la aplicación
+
+//PUT http://localhost:3000/api/users
+//Editar datos del perfil del user o admin
+
+//DELETE http://localhost:3000/api/users
+//Borrar un user de la BBDD (admin)
+
+
+
 //IMPORTACIÓN DEL MODELO USUARIO
 const userModel = require("../models/usersApiModel");
 

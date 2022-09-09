@@ -1,3 +1,16 @@
+///////////////ENDPOINTS API:
+
+//POST http://localhost:3000/api/users
+//Registrarse en la aplicación
+
+//PUT http://localhost:3000/api/users
+//Editar datos del perfil del user o admin
+
+//DELETE http://localhost:3000/api/users
+//Borrar un user de la BBDD (admin)
+
+
+
 //IMPORTACIÓN DE EXPRESS:
 const express = require("express");
 
@@ -14,11 +27,3 @@ usersApiRouter.delete("/", usersApiController.deleteUserController);
 
 //EXPORTACIÓN DEL ROUTER DE USUARIOS:
 module.exports = usersApiRouter;
-
-
-
-///////////////ENDPOINTS DE USUARIOS:
-
-//POST http://localhost:3000/api/users
-//PUT http://localhost:3000/api/users
-//DELETE http://localhost:3000/api/users
