@@ -40,6 +40,7 @@ const loginUser = async(req,res)=>{
                         msg: 'Correct authentication',
                         token: token
                     });
+                    
                 }else{
                     res.status(400).json({msg:'Usuario o contaseña incorrecta'})
                 }
